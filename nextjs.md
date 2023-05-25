@@ -1,4 +1,4 @@
-# Next.JS
+# 들어가기 전에
 
 1. 라이브러리(library)
     - 모듈과 패키지의 모음
@@ -44,7 +44,86 @@ API(Application Programming Interface): 라이브러리 컴포넌트 자체
     - 요청시 페이지만 불러옴
 
 
+----
+# ES6 문법 
 
+## let , const , var 차이 
+-  var의 scope는 함수 단위 이고 let, const의 scope는 블록 단위 이다.
+- 예시 
+```javascript
+    function printMessage() {
+        var message = "hello";
+
+        if (true) {
+            var message = "world!";
+
+            console.log(message);
+            // world!
+        }
+
+            console.log(message);
+            // world!
+    }
+
+    printMessage();
+```
+```javascript
+function printMessage() {
+    let message = "hello";
+
+    if (true) {
+        let message = "world!";
+
+        console.log(message);
+        // world!
+    }
+
+    console.log(message);
+    // hello
+}
+
+printMessage();
+```
+- var는 중복으로 변수 설정이 가능하지만, let 과 const는 변수를 중복으로 선언할 수 없다.
+- var, let은 값을 다시 설정할 수 있지만, const는 한 번만 가능하다.
+
+__정리__
+ - ES6 문법에서 var 사용은 지양하는것이 좋고, constfmf 우선적으로 사용하고, 값의 변경이 필요한 경우 let을 사용.
 
 ---
+## next.js 설치 방법  
+1. <https://nextjs.org/docs/getting-started/installation>
+2. 터미널에 npx create-next-app@latest .
+    1. Would you like to use TypeScript with this project? … No / __Yes__
+    2. Would you like to use ESLint with this project? … No / __Yes__
+    3. Would you like to use Tailwind CSS with this project? … __No__ / Yes
+    4. Would you like to use `src/` directory with this project? … No / __Yes__
+    5. Use App Router (recommended)? … __No__ / Yes
+    6. Would you like to customize the default import alias? … __No__ / Yes
+3. yarn
+4. yarn dev
 
+
+# yarn vs npm
+npm 과 yarn은 __자바스크립트 패키지 매니저__ 이다.
+우선 개발에 있어 이 둘의 차이는 크게 없다고 볼 수 있다. 다만 yarn이 npm의 부족한 점들을 개선 하였기 때문에 사용하게 되었다. 
+    
+- 개선 사항
+    1. 속도가 빠르다.
+    2. 보안성이 좋다.
+
+npm은 이름 그대로 __노드 패키지 매니저__ 이다. 런타임 동안 노드 환경에 쓰이는 다양한 패키지들을 관리한다. 
+yarn은 npm의 부족한 부분들을 개선하기 위해 개발 되어 npm과 동일한 구조에 의존한ㄷ다. 따라서 패키지의 레지스트리에 대한것은 바뀌지 않았고, 설치 절차가 바뀌 었다고 생각하면 된다.
+
+npm은 필수 단계를 순차적으로 수행하는 경향이 있어 다음 패키지로 넘어가전에 각 패키지를 완전히 설치 해야한다. 하지만 yarn은 동시에 여러 패키지들을 설치 할 수 있기 때문에 속도 면에서 크게 향상 되었다고 볼 수 있다.(병령로 설치한다.) 
+하지만, npm 5.0 버전과 비교 하였을때 차이는 크지 않다.
+
+npm은 의존 관계를 가지는 다른 패키지들이 즉시 포함 되도록 한다.
+이런 부분이 더 편리하긴 한데 보안 문제에 있어 여러 취약점들을 불러 올 수 있다.
+yarn은 yarn.lock이나 package.json 파일에 있는 것들만 설치를 한다.
+
+
+
+- axios < api 
+- fetch < api node.js 내장 되어 있음
+- client > backend api 호출 / client > next api 호출 > backend api 호출  차이 

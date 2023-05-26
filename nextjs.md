@@ -18,12 +18,12 @@
 4. 함수 
     - 하나의 기능을 정의 
 
-# 프레임워크 vs 라이브러리 vs API
+## 프레임워크 vs 라이브러리 vs API
 프레임워크 : 전체적인 흐름을 자체적으로 지님
 라이브러리 : 프로그래머가 전체적인 흐름을 지님
 API(Application Programming Interface): 라이브러리 컴포넌트 자체 
 
-# SSR vs CSR vs Static Stie
+## SSR vs CSR vs Static Stie
 - Server-side Rendering (SSR)
     - HTML을 보게 만들어 주는 작업을 서버에서 수행한다고 생각하면 된다. 
     장점 : 초기 랜더링 속도가 매우 빠르다.
@@ -42,53 +42,6 @@ API(Application Programming Interface): 라이브러리 컴포넌트 자체
 - Static Site 
     - 완성된 페이지  
     - 요청시 페이지만 불러옴
-
-
-----
-# ES6 문법 
-
-## let , const , var 차이 
--  var의 scope는 함수 단위 이고 let, const의 scope는 블록 단위 이다.
-- 예시 
-```javascript
-    function printMessage() {
-        var message = "hello";
-
-        if (true) {
-            var message = "world!";
-
-            console.log(message);
-            // world!
-        }
-
-            console.log(message);
-            // world!
-    }
-
-    printMessage();
-```
-```javascript
-function printMessage() {
-    let message = "hello";
-
-    if (true) {
-        let message = "world!";
-
-        console.log(message);
-        // world!
-    }
-
-    console.log(message);
-    // hello
-}
-
-printMessage();
-```
-- var는 중복으로 변수 설정이 가능하지만, let 과 const는 변수를 중복으로 선언할 수 없다.
-- var, let은 값을 다시 설정할 수 있지만, const는 한 번만 가능하다.
-
-__정리__
- - ES6 문법에서 var 사용은 지양하는것이 좋고, constfmf 우선적으로 사용하고, 값의 변경이 필요한 경우 let을 사용.
 
 ---
 ## next.js 설치 방법  
@@ -127,3 +80,4 @@ yarn은 yarn.lock이나 package.json 파일에 있는 것들만 설치를 한다
 - axios < api 
 - fetch < api node.js 내장 되어 있음
 - client > backend api 호출 / client > next api 호출 > backend api 호출  차이 
+
